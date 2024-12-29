@@ -1,0 +1,748 @@
+{
+    "nodes": [
+        [
+            "0",
+            {
+                "name": "MessageWorker",
+                "attribute": {
+                    "value": "Welcome to your Job Search and Application Assistant! I'm here to help you find the perfect job, apply to listings, and track your applications. Let me know your preferences or if you need any career advice. How can I assist you in your job search today?",
+                    "task": "start message",
+                    "directed": false
+                },
+                "limit": 1,
+                "type": "start"
+            }
+        ],
+        [
+            "1",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Can you please tell me about your skills, experiences, and any specific job preferences you have, such as location or industry?",
+                    "task": "Inquire about the user's skills, experiences, and job preferences (e.g., location, industry, job type).",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "2",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "",
+                    "task": "Use the JobSearchWorker to search for job listings that match the user's skills and preferences.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "3",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Here are some job listings that match your criteria.",
+                    "task": "Provide the user with a list of job listings that match their criteria.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "4",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Would you like to see more job options or refine your search criteria?",
+                    "task": "Ask the user if they want to see more job options or refine their search criteria.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "5",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Are you interested in applying for any of these jobs, or do you need further assistance?",
+                    "task": "Confirm if the user is interested in applying for any of the jobs or needs further assistance.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "6",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "I can help you create or manage your job application. Would you like to proceed?",
+                    "task": "If the user is interested, use the JobApplicationWorker to assist in creating or managing their job application.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "7",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Could you please provide some information related to your profile to help us assist you better?",
+                    "task": "Request the user for information related to their profile using MessageWorker",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "8",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "We are now creating your job application. Please hold on for a moment.",
+                    "task": "Use JobApplicationWorker to create a job application for the user.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "9",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Your job application has been successfully created. Would you like any assistance with interview preparation or career advice?",
+                    "task": "Confirm the completion of the process and offer additional help, such as interview preparation or career advice, using RAGWorker for general queries.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "10",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Please let me know which job application you would like to track or update.",
+                    "task": "Ask the user which job application they want to track or update using MessageWorker",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "11",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "",
+                    "task": "Utilize the JobApplicationWorker to check the status of the specified job application.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "12",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "The current status of your job application is [Status].",
+                    "task": "Inform the user about the current status of their job application.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "13",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Do you need any additional assistance or updates on other job applications?",
+                    "task": "Ask if the user needs additional assistance or updates on other job applications.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "14",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Let me know how I can assist you further, or if you have any other job applications to check.",
+                    "task": "Provide guidance or perform further actions based on the user's response.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "15",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Could you please share your skills, interests, and any specific job attributes you are looking for, such as location, industry, or role type?",
+                    "task": "Use MessageWorker to ask the user about their skills, interests, and preferred job attributes (e.g., location, industry, role type).",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "16",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "",
+                    "task": "Use JobSearchWorker to search for job listings that match the user's skills and preferences.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "17",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Here is a list of job opportunities that match your criteria. Are you interested in any of these jobs, or would you like to refine your search?",
+                    "task": "Use MessageWorker to provide a curated list of jobs that match the user's criteria and ask if they are interested in any of the jobs or want to refine their search.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "18",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "",
+                    "task": "If the user is interested in a specific job, use JobApplicationWorker to assist with the application process.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "19",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Would you like me to track the status of your application, or do you need any further career advice?",
+                    "task": "Use MessageWorker to offer to track the status of the application or provide further career advice if needed.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "20",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Could you please tell me what type of interview or role you are preparing for so I can tailor my advice accordingly?",
+                    "task": "Inquire about the type of interview or role the user is preparing for to tailor the preparation advice.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "21",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Here are some general interview tips and specific practice questions for the role you are targeting.",
+                    "task": "Using RAGWorker, provide general interview tips and specific practice questions related to the user's targeted role.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "22",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Do you need further assistance or is there any specific area you want to focus on?",
+                    "task": "Ask the user if they need further assistance or have specific areas they want to focus on.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "23",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Would you like additional resources or would you like to schedule a follow-up session for more preparation?",
+                    "task": "Offer additional resources or schedule a follow-up session if the user desires more preparation.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "24",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Can you tell me more about your current career situation and what goals you're aiming to achieve?",
+                    "task": "Inquire about the user's current career situation and goals to understand their needs.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "25",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "",
+                    "task": "Use the RAGWorker to search for and retrieve relevant career advice and guidance from the company's internal documentation.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "26",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Here's some career advice that might be helpful for you. Let me know if this information is useful.",
+                    "task": "Deliver the curated career advice to the user and ask if it was helpful.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "27",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "Do you need any additional assistance or resources to help you with your career goals?",
+                    "task": "Ask if the user needs additional assistance or resources related to their career goals.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ],
+        [
+            "28",
+            {
+                "name": "DefaultWorker",
+                "attribute": {
+                    "value": "If you have any more questions or need further information, feel free to ask. Otherwise, have a great day!",
+                    "task": "Provide further information or resources if requested by the user, or conclude the interaction if the user is satisfied.",
+                    "directed": false
+                },
+                "limit": 1
+            }
+        ]
+    ],
+    "edges": [
+        [
+            "0",
+            "1",
+            {
+                "intent": "User wants to find job listings",
+                "attribute": {
+                    "weight": 1,
+                    "pred": true,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "1",
+            "2",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "2",
+            "3",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "3",
+            "4",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "4",
+            "5",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "5",
+            "6",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "0",
+            "7",
+            {
+                "intent": "User wants to apply for a job",
+                "attribute": {
+                    "weight": 1,
+                    "pred": true,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "7",
+            "8",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "8",
+            "9",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "0",
+            "10",
+            {
+                "intent": "User wants to track application status",
+                "attribute": {
+                    "weight": 1,
+                    "pred": true,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "10",
+            "11",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "11",
+            "12",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "12",
+            "13",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "13",
+            "14",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "0",
+            "15",
+            {
+                "intent": "User seeks job recommendations",
+                "attribute": {
+                    "weight": 1,
+                    "pred": true,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "15",
+            "16",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "16",
+            "17",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "17",
+            "18",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "18",
+            "19",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "0",
+            "20",
+            {
+                "intent": "User wants to prepare for an interview",
+                "attribute": {
+                    "weight": 1,
+                    "pred": true,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "20",
+            "21",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "21",
+            "22",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "22",
+            "23",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "0",
+            "24",
+            {
+                "intent": "User seeks career advice",
+                "attribute": {
+                    "weight": 1,
+                    "pred": true,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "24",
+            "25",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "25",
+            "26",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "26",
+            "27",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ],
+        [
+            "27",
+            "28",
+            {
+                "intent": "None",
+                "attribute": {
+                    "weight": 1,
+                    "pred": false,
+                    "definition": "",
+                    "sample_utterances": []
+                }
+            }
+        ]
+    ],
+    "role": "job search and application assistant",
+    "user_objective": "The job search and application assistant helps users find job listings, apply to them, and track the status of their applications. It should be able to understand the user's preferences and recommend jobs that match their skills and interests. The assistant should also be able to help the user prepare for interviews and provide general career advice.",
+    "builder_objective": "The job search and application assistant always asks for user preferences or required user information before searching for jobs or doing CRUD with applications.",
+    "domain": "Human Resources",
+    "intro": "Microsoft is a multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services. Microsoft is known for its Windows operating system, Office productivity suite, and Azure cloud services. The company has a strong company culture that values diversity, inclusion, and innovation. Microsoft offers a wide range of job opportunities in various fields, including engineering, marketing, sales, and customer service. The company has a rigorous application process that includes multiple rounds of interviews and assessments. Microsoft is committed to hiring the best talent and providing a supportive work environment for its employees.",
+    "task_docs": [
+        {
+            "desc": "Microsoft Careers Culture and Application Process",
+            "source": "https://careers.microsoft.com",
+            "num": 20
+        }
+    ],
+    "rag_docs": [
+        {
+            "desc": "Microsoft Careers Culture and Application Process",
+            "source": "https://careers.microsoft.com",
+            "num": 20
+        }
+    ],
+    "tasks": [],
+    "workers": [
+        "RAGWorker",
+        "MessageWorker",
+        "JobApplicationWorker",
+        "JobSearchWorker",
+        "DefaultWorker"
+    ],
+    "nluapi": "http://localhost:55135/nlu/predict",
+    "slotfillapi": "http://localhost:55135/slotfill/predict"
+}

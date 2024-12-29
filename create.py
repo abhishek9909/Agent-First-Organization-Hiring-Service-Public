@@ -13,6 +13,7 @@ from agentorg.utils.utils import init_logger
 from agentorg.orchestrator.orchestrator import AgentOrg
 from agentorg.orchestrator.generator.generator import Generator
 from agentorg.workers.tools.RAG.build_rag import build_rag
+from agentorg.workers.tools.custom import build_job_database
 from agentorg.workers.tools.database.build_database import build_database
 from agentorg.utils.model_config import MODEL
 
@@ -45,6 +46,11 @@ def init_worker(args):
     elif "DataBaseWorker" in workers:
         logger.info("Initializing DataBaseWorker...")
         build_database(args.output_dir)
+
+    elif "JobApplicationWorker" in workers:
+        logger.info("Initializing JobApplicationsWorker....")
+        build_job_database(args.output_dir)
+
 
 
 if __name__ == "__main__":

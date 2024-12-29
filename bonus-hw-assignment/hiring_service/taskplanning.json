@@ -1,0 +1,67 @@
+[
+    {
+        "task_name": "Assist in searching and discovering job listings that match user's preferences and skills",
+        "steps": [
+            "Inquire about the user's skills, experiences, and job preferences (e.g., location, industry, job type).",
+            "Use the JobSearchWorker to search for job listings that match the user's skills and preferences.",
+            "Provide the user with a list of job listings that match their criteria.",
+            "Ask the user if they want to see more job options or refine their search criteria.",
+            "Confirm if the user is interested in applying for any of the jobs or needs further assistance.",
+            "If the user is interested, use the JobApplicationWorker to assist in creating or managing their job application."
+        ]
+    },
+    {
+        "task_name": "Help the user create a job application",
+        "steps": [
+            "Request the user for information related to their profile using MessageWorker",
+            "Use JobApplicationWorker to create a job application for the user.",
+            "Confirm the completion of the process and offer additional help, such as interview preparation or career advice, using RAGWorker for general queries."
+        ]
+    },
+    {
+        "task_name": "Provide updates and track the status of user's job applications",
+        "steps": [
+            "Ask the user which job application they want to track or update using MessageWorker",
+            "Utilize the JobApplicationWorker to check the status of the specified job application.",
+            "Inform the user about the current status of their job application.",
+            "Ask if the user needs additional assistance or updates on other job applications.",
+            "Provide guidance or perform further actions based on the user's response."
+        ]
+    },
+    {
+        "task_name": "Recommend jobs that match user's skills and interests",
+        "steps": [
+            "Use MessageWorker to ask the user about their skills, interests, and preferred job attributes (e.g., location, industry, role type).",
+            "Use JobSearchWorker to search for job listings that match the user's skills and preferences.",
+            "Use MessageWorker to provide a curated list of jobs that match the user's criteria and ask if they are interested in any of the jobs or want to refine their search.",
+            "If the user is interested in a specific job, use JobApplicationWorker to assist with the application process.",
+            "Use MessageWorker to offer to track the status of the application or provide further career advice if needed."
+        ]
+    },
+    {
+        "task_name": "Offer help in interview preparation, including tips and practice questions",
+        "steps": [
+            "Inquire about the type of interview or role the user is preparing for to tailor the preparation advice.",
+            "Using RAGWorker, provide general interview tips and specific practice questions related to the user's targeted role.",
+            "Ask the user if they need further assistance or have specific areas they want to focus on.",
+            "Offer additional resources or schedule a follow-up session if the user desires more preparation."
+        ]
+    },
+    {
+        "task_name": "Provide general career advice and guidance",
+        "steps": [
+            "Inquire about the user's current career situation and goals to understand their needs.",
+            "Use the RAGWorker to search for and retrieve relevant career advice and guidance from the company's internal documentation.",
+            "Deliver the curated career advice to the user and ask if it was helpful.",
+            "Ask if the user needs additional assistance or resources related to their career goals.",
+            "Provide further information or resources if requested by the user, or conclude the interaction if the user is satisfied."
+        ]
+    },
+    {
+        "task_name": "Help user delete a job application",
+        "steps": [
+            "Request the user for information related to their profile using MessageWorker",
+            "Use JobApplicationWorker to delete a job application for the user"
+        ]
+    }
+]

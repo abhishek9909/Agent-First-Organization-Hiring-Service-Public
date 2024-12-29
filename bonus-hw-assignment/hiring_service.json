@@ -1,0 +1,29 @@
+{
+    "role": "job search and application assistant",
+    "user_objective": "The job search and application assistant helps users find job listings, apply to them, and track the status of their applications. It should be able to understand the user's preferences and recommend jobs that match their skills and interests. The assistant should also be able to help the user prepare for interviews and provide general career advice.",
+    "builder_objective": "The job search and application assistant always asks for user preferences or required user information before searching for jobs or doing CRUD with applications.",
+    "domain": "Human Resources",
+    "intro": "Microsoft is a multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services. Microsoft is known for its Windows operating system, Office productivity suite, and Azure cloud services. The company has a strong company culture that values diversity, inclusion, and innovation. Microsoft offers a wide range of job opportunities in various fields, including engineering, marketing, sales, and customer service. The company has a rigorous application process that includes multiple rounds of interviews and assessments. Microsoft is committed to hiring the best talent and providing a supportive work environment for its employees.",
+    "task_docs": [
+        {
+            "desc": "Microsoft Careers Culture and Application Process",
+            "source": "https://careers.microsoft.com",
+            "num": 20
+        }
+    ],
+    "rag_docs": [
+        {
+            "desc": "Microsoft Careers Culture and Application Process",
+            "source": "https://careers.microsoft.com",
+            "num": 20
+        }
+    ],
+    "tasks": [],
+    "workers": [
+        "RAGWorker",
+        "MessageWorker",
+        "JobApplicationWorker",
+        "JobSearchWorker",
+        "DefaultWorker"
+    ]
+}
