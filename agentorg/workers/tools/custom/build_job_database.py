@@ -5,7 +5,7 @@ import os
 
 
 def build_database(folder_path):
-    db_path = Path(folder_path) / "show"
+    db_path = Path(folder_path) / "job_application_db.sqlite"
     if os.path.exists(db_path):
         os.remove(db_path)
 

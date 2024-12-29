@@ -26,7 +26,6 @@ class JobApplicationActions:
         ## return "More information probably required to perform this action OR Action is not supported by the bot."
 
     def create_application(self, msg_state: MessageState, current_application: JobApplicationSchema):
-        print(current_application)
         try:
             try:
                 job_id = current_application["job_id"]
@@ -41,25 +40,21 @@ class JobApplicationActions:
             c = conn.cursor()
             ## check if existing application - jobId, user_name exists.
             c.execute(f"SELECT * FROM applications WHERE job_id = '{job_id}' AND user_name = '{user_name}'")
-            print("here 1")
             if c.fetchone():
                 msg_state["status"] = StatusEnum.COMPLETE
                 msg_state["message_flow"] = "Application already exists for job_id: {job_id} for user: {user_name}"
                 logger.info(f"Application already exists for job_id: {job_id} for user: {user_name}")
-                print("here 2")
                 # return "Application already exists for job_id: {job_id} for user: {user_name}"
-            c.execute(f"INSERT INTO applications (job_id, user_name, linkedin_url, status) VALUES ('{job_id}', '{user_name}', '{linkedin_url}', 'Applied')")
-            print("here 3")
+            c.execute(f"INSERT INTO applications (job_id, user_name, linkedin_url, status) VALUES ('{job_id}', '{user_name}', '{linkedin_url}', 'Pending')")
             msg_state["status"] = StatusEnum.COMPLETE
             msg_state["message_flow"] = "Application for job_id: {job_id} created successfully for user: {user_name}"
             logger.info(f"Application for job_id: {job_id} created successfully for user: {user_name}")
-        except:
+        except Exception as e:
             msg_state["message_flow"] = "Error occurred while creating the application, Try providing a jobId and userName"
-            logger.error("Error occurred while creating the application")
-            return "Error occurred while creating the application"
+            logger.error(f"Error occurred while creating the application - {e}")
+            # return "Error occurred while creating the application"
 
     def delete_application(self, msg_state: MessageState, current_application: JobApplicationSchema):
-        print(current_application)
         try:
             try:
                 job_id = current_application["job_id"]
@@ -76,13 +71,12 @@ class JobApplicationActions:
             msg_state["status"] = StatusEnum.COMPLETE
             msg_state["message_flow"] = "Application for job_id: {job_id} deleted successfully for user: {user_name}"
             logger.info(f"Application for job_id: {job_id} deleted successfully for user: {user_name}")
-        except:
+        except Exception as e:
             msg_state["message_flow"] = "Error occurred while deleting the application, Try providing a jobId and userName"
-            logger.error("Error occurred while deleting the application")
-            return "Error occurred while deleting the application"
+            logger.error(f"Error occurred while deleting the application - {e}")
+            # return "Error occurred while deleting the application"
 
     def check_application_status(self, msg_state: MessageState, current_application: JobApplicationSchema):
-        print(current_application)
         try:
             try:
                 job_id = current_application["job_id"]
@@ -105,7 +99,7 @@ class JobApplicationActions:
                 msg_state["status"] = StatusEnum.COMPLETE
                 msg_state["message_flow"] = f"No application found for job_id: {job_id} for user: {user_name}"
                 logger.info(f"No application found for job_id: {job_id} for user: {user_name}")
-        except:
+        except Exception as e:
             msg_state["message_flow"] = "Error occurred while checking the application status, Try providing a jobId and userName"
-            logger.error("Error occurred while checking the application status")
-            return "Error occurred while checking the application status"
+            logger.error(f"Error occurred while checking the application status = {e}")
+            # return "Error occurred while checking the application status"
